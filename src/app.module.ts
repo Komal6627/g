@@ -8,19 +8,19 @@ import { EmployeeModule } from './employee/employee.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true}),
+    ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
-      type:'postgres',
-      host: "localhost",
+      type: 'postgres',
+      host: 'localhost',
       port: 5432,
-      username: "postgres",
-      password: "Komal",
-     // database: process.env.POSTGRES_NAME,
-       database: "employee",
-      autoLoadEntities:true,
-      synchronize: true
+      username: 'postgres',
+      password: 'Komal',
+      // database: process.env.POSTGRES_NAME,
+      database: 'employee',
+      autoLoadEntities: true,
+      synchronize: true,
     }),
-    EmployeeModule
+    EmployeeModule,
   ],
   controllers: [AppController],
   providers: [AppService],
